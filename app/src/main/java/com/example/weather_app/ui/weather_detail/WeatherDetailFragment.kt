@@ -90,7 +90,7 @@ class WeatherDetailFragment : Fragment() {
             when {
                 temperature < 12 -> R.drawable.rainy_weather_background
                 temperature in 12..15 -> R.drawable.cloudy_weather_background
-                temperature in 16..24 -> R.drawable.cold_weather_background
+                temperature in 16..22 -> R.drawable.cold_weather_background
                 else -> R.drawable.hot_weather_background
             }
         )
