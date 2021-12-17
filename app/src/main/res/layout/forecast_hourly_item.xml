@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.weather_app.domain.entities.ForecastHourly" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextWhiteTransparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.hour}"
+            android:textSize="13sp"
+            tools:text="14 hrs."/>
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:paddingVertical="3dp"/>
+
+        <TextView
+            style="@style/TextWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.temperature + `°`}"
+            android:textSize="18sp"
+            tools:text="20°"/>
+
+    </LinearLayout>
+
+</layout>

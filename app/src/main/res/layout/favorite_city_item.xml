@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.weather_app.domain.entities.WeatherData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cityCardView"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/hot_weather_background"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/TextWhite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight = "0"
+                        android:text="@{item.name + `, ` + item.country}"
+                        android:gravity="start"
+                        android:textSize="20sp"
+                        tools:text="Lima, Perú"/>
+
+                    <TextView
+                        style="@style/TextWhite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight = "0"
+                        android:text="@{item.consultHour}"
+                        android:gravity="start"
+                        android:textSize="10sp"
+                        tools:text="15:20"/>
+
+                    <View
+                        android:layout_width = "fill_parent"
+                        android:layout_height = "0dp"
+                        android:layout_weight = "1"/>
+
+                    <TextView
+                        style="@style/TextWhite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{item.weather.description}"
+                        android:gravity="start"
+                        android:textSize="13sp"
+                        tools:text="Nublado"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        style="@style/TextWhite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight = "0"
+                        android:text="@{item.main.temperature + `°`}"
+                        android:gravity="end"
+                        android:textSize="32sp"
+                        tools:text="22°"/>
+
+                    <View
+                        android:layout_width = "fill_parent"
+                        android:layout_height = "0dp"
+                        android:layout_weight = "1"/>
+
+                    <TextView
+                        style="@style/TextWhite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Máx.: ` + item.main.maximumTemperature + `° - Mín.:` + item.main.maximumTemperature + `°`}"
+                        android:gravity="end"
+                        android:textSize="13sp"
+                        tools:text="Máx.: 22° Mín.: 17°"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

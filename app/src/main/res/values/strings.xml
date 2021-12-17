@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">clima_app</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="api_key">changeme</string>
+
+    <string name="str_weather_max_and_min_temperature">Máx.: %1$s° - Min.: %2$s°</string>
+    <string name="str_weather_description">Mayormente %1$s</string>
+    <string name="str_city_search">Buscar ciudad</string>
+    <string name="str_city_list_empty">Aún no ha consultado el clima de ninguna ciudad</string>
+    <string name="str_city_list_error">Se están presentando problemas con algunos servicios</string>
+    <string name="str_forecast_title">PRONÓSTICO PARA LOS PRÓXIMOS 7 DÍAS</string>
+</resources>

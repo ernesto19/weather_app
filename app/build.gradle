@@ -1,0 +1,101 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    compileSdk 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.weather_app"
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'BASE_URL', '"https://api.openweathermap.org/data/2.5/"'
+        buildConfigField 'String', 'GM_API_KEY', '"AIzaSyD73lA9kjHeAtrERQTjS5h7o7myh2BBZTc"'
+        buildConfigField 'String', 'OW_API_KEY', '"88f4579703447e844c25c9fa3e8bf75c"'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlinVersion"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.0-alpha04"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.0-alpha04"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.liveDataVersion"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.liveDataVersion"
+
+    // DataBinding
+    kapt 'com.android.databinding:compiler:3.2.0-alpha10'
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    // Koin
+    def koin_version = "2.1.5"
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    // Calligraphy
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    // Timber
+    def timberVersion = "4.7.1"
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+
+    // Places
+    implementation 'com.google.android.libraries.places:places:1.1.0'
+
+    // SecurityCrypto
+    implementation 'androidx.security:security-crypto:1.1.0-alpha01'
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+
+    // Testing
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
