@@ -3,6 +3,7 @@ package com.example.weather_app.ui.weather_consult
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -128,7 +129,7 @@ class WeatherConsultFragment : Fragment() {
                         getWeather(
                             latLng?.latitude ?: 0.0,
                             latLng?.longitude ?: 0.0,
-                            place.addressComponents?.asList()?.getOrNull(3)?.name ?: ""
+                            place.addressComponents?.asList()?.find { item -> item.types.contains("country") }?.name ?: ""
                         )
                     }
                 }
