@@ -66,6 +66,7 @@ class WeatherConsultFragment : Fragment() {
                         ::onCitySelected
                     )
                 }
+                weatherConsultViewModel.favoriteCitiesWeatherLiveData.postValue(null)
             }
         })
     }

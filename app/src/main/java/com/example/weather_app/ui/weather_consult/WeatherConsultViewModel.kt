@@ -38,6 +38,7 @@ class WeatherConsultViewModel(
             if (it.isNullOrEmpty()) {
                 emptyListLiveData.postValue(true)
             } else {
+                emptyListLiveData.postValue(false)
                 favoriteCitiesWeatherLiveData.postValue(it)
             }
         }
