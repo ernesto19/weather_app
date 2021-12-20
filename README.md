@@ -10,3 +10,5 @@ https://user-images.githubusercontent.com/20495725/146523213-7d51f2fa-76bd-43e3-
 
 **API:**
 https://api.openweathermap.org/data/2.5
+
+**Goole Maps Api: Places**
