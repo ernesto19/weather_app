@@ -54,8 +54,8 @@ class WeatherConsultFragment : Fragment() {
             it?.let {
                 hideProgressBar()
                 goToWeatherDetail(it)
+                weatherConsultViewModel.selectedWeatherLiveData.postValue(null)
             }
-            weatherConsultViewModel.selectedWeatherLiveData.postValue(null)
         })
 
         weatherConsultViewModel.favoriteCitiesWeatherLiveData.observe(viewLifecycleOwner, {

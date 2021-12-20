@@ -44,8 +44,8 @@ class WeatherDetailFragment : Fragment() {
                 binding.forecastRecyclerView.apply {
                     adapter = ForecastAdapter(it)
                 }
+                weatherDetailViewModel.weatherForecastListLiveData.postValue(null)
             }
-            weatherDetailViewModel.weatherForecastListLiveData.postValue(null)
         })
 
         weatherDetailViewModel.weatherForecastHourlyListLiveData.observe(viewLifecycleOwner, {
@@ -53,8 +53,8 @@ class WeatherDetailFragment : Fragment() {
                 binding.forecastHourlyRecyclerView.apply {
                     adapter = ForecastHourlyAdapter(it)
                 }
+                weatherDetailViewModel.weatherForecastHourlyListLiveData.postValue(null)
             }
-            weatherDetailViewModel.weatherForecastHourlyListLiveData.postValue(null)
         })
 
         weatherDetailViewModel.weatherDataLiveData.observe(viewLifecycleOwner, {
